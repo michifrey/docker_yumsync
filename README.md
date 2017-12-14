@@ -162,11 +162,12 @@ http {
 All the pieces are in place now. The Nginx container can be ran with the Nginx config file and data-only container volumes mounted:
 
 ```bash
-docker run --rm \
-  --volumes-from yumsync_data \
-  -v $PWD/nginx.conf:/etc/nginx/nginx.conf:ro \
-  -p 80:80 \
-  nginx:1.9
+docker run  /
+--volumes-from yumsync_data /
+--name YUMREGISTRY-nginx-container / 
+-v /etc/yumsync/nginx.conf:/etc/nginx/nginx.conf:ro  /
+-p 7800:80  /
+-d nginx
 ```
 
 If you are using another machine or VM as your docker host, you will need to use that ip address to access Nginx. Otherwise, use `127.0.0.1`. Determine what ip address Nginx will be accessible at using the following:
